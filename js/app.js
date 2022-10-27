@@ -144,10 +144,10 @@ let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
     let ansProd = 0;
     let ansProdString = '';
-    for (let i = 0; i < multArr.length; i++){
-        ansSum = multiply(ansProd, multArr[i])[0];
+    for (let i = 0; i < dynamicArray.length; i++){
+        ansSum = multiply(ansProd,dynamicArray[i])[0];
     }
-    ansProdString = `The numbers ${multArr.toString()} have a product of ${ansProd}.`;
+    ansProdString = `The numbers ${dynamicArray.toString()} have a product of ${ansProd}.`;
 
     return ([ansProd, ansProdString]);
 }

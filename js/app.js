@@ -9,6 +9,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
+    let ans = a + b;
+    let ansString = `The sum of ${a} and ${b} is ${ans}.`;
+    return ([ans, ansString]);
 
 }
 
@@ -27,7 +30,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+    let ans = a * b;
+    let ansString = `The product of ${a} and ${b} is ${ans}.`;
+    return ([ans, ansString]);
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -48,7 +53,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+    let ansSum = sum(sum(a, b)[0], c)[0];
+    let ansProd = multiply(multiply(a, b)[0], c)[0];
+    let ansStringSum = `The sum of ${a} and ${b} and ${c} is ${ansSum}.`;
+    let ansStringProd = `The product of ${a} and ${b} and ${c} is ${ansProd}.`;
+    return ([ansSum, ansProd, ansStringSum, ansStringProd]);
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -70,7 +79,14 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+    let ansSum = 0;
+    let ansSumString = '';
+    for (let i = 0; i < sumArr.length; i++){
+        ansSum = sum(ansSum, sumArr[i])[0];
+    }
+    ansSumString = sumArr.toString() + ` was passing in as an array of numbers, and ${ansSum} is their sum.`;
 
+    return ([ansSum, ansSumString]);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -91,7 +107,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+    let ansProd = 0;
+    let ansProdString = '';
+    for (let i = 0; i < multArr.length; i++){
+        ansSum = multiply(ansProd, multArr[i])[0];
+    }
+    ansProdString = `The numbers ${multArr.toString()} have a product of ${ansProd}.`;
 
+    return ([ansProd, ansProdString]);
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
@@ -119,7 +142,14 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    let ansProd = 0;
+    let ansProdString = '';
+    for (let i = 0; i < multArr.length; i++){
+        ansSum = multiply(ansProd, multArr[i])[0];
+    }
+    ansProdString = `The numbers ${multArr.toString()} have a product of ${ansProd}.`;
 
+    return ([ansProd, ansProdString]);
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
